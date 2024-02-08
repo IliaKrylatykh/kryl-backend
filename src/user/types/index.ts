@@ -20,7 +20,7 @@ export class GetProfileResponse {
 	favorites: string[]
 }
 
-export class PutProfileResponse {
+export class UpdateProfileResponse {
 	@ApiProperty({ example: 1 })
 	id: number
 
@@ -47,4 +47,9 @@ export class PutProfileResponse {
 
 	@ApiProperty({ example: [] })
 	favorites: string[]
+}
+
+export class ToggleFavoriteResponse {
+	@ApiProperty({ example: 'Success' })
+	message: string
 }

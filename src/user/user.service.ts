@@ -89,6 +89,6 @@ export class UserService {
 			}
 		})
 
-		return 'success'
+		return { message: 'Success' }
 	}
 }

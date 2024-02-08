@@ -14,7 +14,11 @@ import { Auth } from 'src/auth/decorators/auth.decorator'
 import { CurrentUser } from 'src/auth/decorators/user.decorator'
 import { UserDto } from './dto/user.dto'
 import { ApiBearerAuth, ApiOkResponse, ApiTags } from '@nestjs/swagger'
-import { GetProfileResponse, PutProfileResponse } from './types'
+import {
+	GetProfileResponse,
+	ToggleFavoriteResponse,
+	UpdateProfileResponse
+} from './types'
 
 @ApiTags('Users')
 @Controller('users')
@@ -29,7 +33,7 @@ export class UserController {
 		return this.userService.byId(id)
 	}
 
-	@ApiOkResponse({ type: PutProfileResponse })
+	@ApiOkResponse({ type: UpdateProfileResponse })
 	@ApiBearerAuth('JWT-auth')
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
@@ -39,7 +43,7 @@ export class UserController {
 		return this.userService.updateProfile(id, dto)
 	}
 
-	// @ApiOkResponse({ type: AuthResponse })
+	@ApiOkResponse({ type: ToggleFavoriteResponse })
 	@ApiBearerAuth('JWT-auth')
 	@Auth()
 	@HttpCode(200)
