@@ -53,3 +53,20 @@ export class ToggleFavoriteResponse {
 	@ApiProperty({ example: 'Success' })
 	message: string
 }
+
+export class UserResponse {
+	@ApiProperty({ example: 1 })
+	id: number
+
+	@ApiProperty({ example: 'test@test.ru' })
+	email: string
+
+	@ApiProperty({ example: 'string' })
+	name: string
+
+	@ApiProperty({ example: 'string' })
+	avatarPath: string
+
+	@ApiProperty({ example: 'string' })
+	phone: string
+}

@@ -96,7 +96,9 @@ model OrderItem {
   orderId Int?   @map("order_id")
 
   product   Product @relation(fields: [productId], references: [id])
-  productId Int
+  productId Int     @map("product_id")
+
+  @@map("Order_item")
 }
 
 enum EnumOrderStatus {
