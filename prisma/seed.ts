@@ -24,7 +24,7 @@ async function main() {
 			images: Array.from({ length: faker.number.int({ min: 2, max: 6 }) }).map(
 				() => faker.image.urlLoremFlickr()
 			),
-			categories: {
+			category: {
 				create: {
 					name: faker.commerce.productMaterial(),
 					slug: faker.lorem.slug()

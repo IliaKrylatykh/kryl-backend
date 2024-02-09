@@ -28,10 +28,10 @@ export class ReviewController {
 	}
 
 	@ApiOkResponse({ type: CreateReviewResponse })
+	@ApiBearerAuth('JWT-auth')
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
 	@Post('leave/:productId')
-	@ApiBearerAuth('JWT-auth')
 	@Auth()
 	async leaveReview(
 		@CurrentUser('id') id: number,
